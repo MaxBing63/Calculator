@@ -26,6 +26,14 @@ body {
     background-color: rgb(239, 239, 239);
 }
 
+#result {
+    text-align: end;
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 50px;
+    margin-right: 20px;
+}
+
 #reset {
     display: flex;
     justify-content: space-between;
@@ -44,7 +52,7 @@ body {
     width: 80px;
     height: 50px;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 #clear {
