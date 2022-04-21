@@ -30,3 +30,18 @@ function operate(operator, num1, num2) {
             break;
     }
 }
+
+let currentDisplay = document.querySelector('#currentdisplay');
+let resultDisplay = document.querySelector('#result');
+
+//numTxt - the textContent of the 1-9 buttons
+function fillNumbers(numTxt) {
+    currentDisplay.textContent += numTxt;
+}
+
+let numberButtons = document.querySelectorAll('.button.number');
+numberButtons.forEach((num) => {
+    num.addEventListener('click', () => {
+        fillNumbers(num.textContent);
+    });
+});
