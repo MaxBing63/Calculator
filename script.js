@@ -30,3 +30,12 @@ function operate(operator, num1, num2) {
             break;
     }
 }
+
+let currentDisplay = document.querySelector('#current');
+
+const numberButtons = document.querySelectorAll('.buttons.button');
+numberButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        return btn.textContent;
+    });
+});
