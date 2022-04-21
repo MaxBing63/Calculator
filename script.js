@@ -31,6 +31,20 @@ function operate(operator, num1, num2) {
     }
 }
 
+function isDisEmpty(disTxt) {
+    if(disTxt === '') {
+        return true;
+    }
+    return false;
+}
+
+function checkOperator(txt) {
+    if(txt === '+' || txt === '-' || txt === '%' || txt === 'x') {
+        return true;
+    }
+    return false;
+}
+
 let currentDisplay = document.querySelector('#currentdisplay');
 let resultDisplay = document.querySelector('#result');
 
@@ -40,8 +54,25 @@ function fillNumbers(numTxt) {
 }
 
 let numberButtons = document.querySelectorAll('.button.number');
-numberButtons.forEach((num) => {
-    num.addEventListener('click', () => {
-        fillNumbers(num.textContent);
+numberButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        fillNumbers(btn.textContent);
+    });
+});
+
+function fillOperators(operatorTxt) {
+    if(isDisEmpty(currentDisplay.textContent)) {
+        return;
+    }else if(checkOperator(currentDisplay.textContent.charAt(currentDisplay.textContent.length - 1))) {
+        return;
+    }else {
+        currentDisplay.textContent += operatorTxt;
+    }   
+}
+
+let operatorButtons = document.querySelectorAll('.button.operator');
+operatorButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        fillOperators(btn.textContent);
     });
 });
